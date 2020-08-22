@@ -41,7 +41,8 @@ def average_metrics(_metrics):
             if key not in metrics:
                 metrics[key] = []
             metrics[key].append(val)
-    return {key: sum(vals)/len(vals) for key, vals in metrics.items()}
+    #return {key: sum(vals)/len(vals) for key, vals in metrics.items()}
+    return {key: sum(vals)//len(vals) for key, vals in metrics.items()}
 
 class Metrics:
     def __init__(self):
