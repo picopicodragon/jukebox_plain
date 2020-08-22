@@ -338,8 +338,17 @@ def run(hps="teeny", port=29500, **kwargs):
     logger, metrics = init_logging(hps, local_rank, rank)
     logger.iters = model.step
 
+    # 手直し=======================================================================
+    print("start epoch=", hps.curr_epoch)
+    print("end epoch=", hps.epochs)
+    print("epoch length=", len(range(hps.curr_epoch, hps.epochs)))
+    #==============================================================================
+
     # Run training, eval, sample
     for epoch in range(hps.curr_epoch, hps.epochs):
+        # 手直し=======================================================================
+        print(datetime.datetime.now(), " epoch=", epoch)
+        #==============================================================================
         metrics.reset()
         data_processor.set_epoch(epoch)
         if hps.train:
