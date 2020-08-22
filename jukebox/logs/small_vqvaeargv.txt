@@ -1,0 +1,1 @@
+train.py --hps=small_vqvae --name=small_vqvae --sample_length=262144 --bs=4 --audio_files_dir=/home/compos/develop/TrainMusic --labels=False --train --aug_shift --aug_blend
